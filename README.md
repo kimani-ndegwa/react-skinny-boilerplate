@@ -6,6 +6,7 @@ To Do:
 - Add Linting and Prettier Support
 - Add Typescript Support
 - Model folder structure for TDD
+- Add Redux support (Redux-Observable)
 
 Documentation coming soon but for now, `npm install` and ensure you have a `.babelrc` file in the root of your project with the following:
 
