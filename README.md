@@ -15,3 +15,5 @@ Documentation coming soon but for now, `npm install` and create a `.babelrc` fil
 ```
 
 Rock out!
+
+And Oh Yeah, there is HMR off the bat because Webpack 4.
