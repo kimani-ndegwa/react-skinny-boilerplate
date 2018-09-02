@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const App = () => {
-  return <div>Coming to you skinny but live!</div>;
-};
+// Components
+import { App } from "./components";
+
+// Styles
+import "./styles/index";
 
 ReactDOM.render(<App />, document.getElementById("my-app"));

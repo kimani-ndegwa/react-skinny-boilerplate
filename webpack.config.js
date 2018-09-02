@@ -10,10 +10,15 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader",
+        exclude: "/node_modules/",
+        query: { compact: false }
+      },
+      {
+        test: /\.jsx$/,
+        loader: "babel-loader",
+        exclude: "/node_modules/",
+        query: { compact: false }
       },
       {
         test: /\.scss$/,
@@ -31,5 +36,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin],
+  resolve: {
+    extensions: [".js", ".jsx", ".scss"]
+  }
 };
