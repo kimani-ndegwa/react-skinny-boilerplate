@@ -4,10 +4,10 @@ Decided to come up with a simple React, Webpack , SASS Build for personal projec
 
 To Do:
 - Add Linting and Prettier Support
-- Add TS Support
-- Add TDD Support
+- Add Typescript Support
+- Model folder structure for TDD
 
-Documentation coming soon but for now, `npm install` and create a `.babelrc` file in the root of your project with the following:
+Documentation coming soon but for now, `npm install` and ensure you have a `.babelrc` file in the root of your project with the following:
 
 ```
 {
