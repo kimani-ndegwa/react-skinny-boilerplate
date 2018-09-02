@@ -1,7 +1,7 @@
 {
-  "name": "kimanindegwa-js-test",
+  "name": "react-skinny-boilerplate-starter",
   "version": "1.0.0",
-  "description": "* XFIVE Online Test.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
