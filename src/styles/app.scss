@@ -1,0 +1,63 @@
+$border-radius: 3px;
+$padding: 10px;
+$primary-color: #f2f2f2;
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    
+    .url-section{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        label{
+        }
+        
+        input{
+            width: 80%;
+            border: 2px solid black;
+            border-radius: $border-radius;
+            padding: $padding;
+            font-size: 18px;
+            &:focus{
+                outline: transparent;
+            }
+        }
+    }
+
+    .method-section{
+        text-align: center;
+
+        .methods{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+            .method{
+                padding: 10px;
+                border: 2px solid black;
+                cursor: pointer;
+                border-radius: $border-radius;
+                transition: .3s all ease-in-out;
+
+                &:hover{
+                    background: black;
+                    color: $primary-color;
+                }
+            }
+        }
+
+
+    }
+
+    .params-section{
+
+    }
+}
+
