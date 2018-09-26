@@ -26,6 +26,7 @@ const MAIN_ROUTES = () => {
         <Route exact path="/" component={Login} />
         <Route exact path="/home" component={App} />
         <Route exact path="/lobby" component={Lobby} />
+        <Route exact path="/lobby/:tableId" component={App} />
       </Switch>
     </Router>
   );
