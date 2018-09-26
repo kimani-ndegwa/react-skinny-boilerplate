@@ -1,0 +1,7 @@
+.lobby-container{
+    padding: 1em;
+    .table-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
