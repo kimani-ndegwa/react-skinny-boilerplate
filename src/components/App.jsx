@@ -7,10 +7,14 @@ const io = require("socket.io-client");
 
 import { BACKEND_URL, getItemFromLocalStorage } from "../../common";
 
+// Components
+import {Navigation} from "./Navigation";
+
 let socket, webrtc, p2p;
 export class App extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -18,7 +22,7 @@ export class App extends React.Component {
     p2p = new P2P(socket);
     webrtc = new SimpleWebRTC({
       localVideoEl: ReactDOM.findDOMNode(this.refs.local),
-      remoteVideosEl: "",
+      remoteVideosEl: ReactDOM.findDOMNode(this.refs.remotes),
       autoRequestMedia: true,
       url: "http://localhost:3001"
     });
@@ -29,13 +33,17 @@ export class App extends React.Component {
     console.log("webrtc component mounted");
   }
 
-  addVideo(video, peer) {
+  componentWillUnmount(){
+    this.removeVideo();
+  }
+
+  addVideo = (video, peer) => {
     console.log("video added", peer);
     console.log(this.refs.remotes);
-    var remotes = ReactDOM.findDOMNode(this.refs.remotes);
+    const remotes = ReactDOM.findDOMNode(this.refs.remotes);
     console.log(remotes);
     if (remotes) {
-      var container = document.createElement("div");
+      const container = document.createElement("div");
       container.className = "videoContainer";
       container.id = "container_" + this.webrtc.getDomId(peer);
       container.appendChild(video);
@@ -60,22 +68,24 @@ export class App extends React.Component {
     // return webrtc.joinRoom('change-this-roomname');
   }
 
-  removeVideo(video, peer) {
+  removeVideo = (video, peer) => {
     console.log("video removed ", peer);
-    // var remotes = ReactDOM.findDOMNode(this.refs.remotes);
-    // var el = document.getElementById(peer ? 'container_' +       this.webrtc.getDomId(peer) : 'localScreenContainer');
-    // if (remotes && el) {
-    //   remotes.removeChild(el);
-    // }
+    const remotes = ReactDOM.findDOMNode(this.refs.remotes);
+    const el = document.getElementById(peer ? 'container_' +       this.webrtc.getDomId(peer) : 'localScreenContainer');
+    if (remotes && el) {
+      remotes.removeChild(el);
+    }
   }
 
   render() {
     return (
-      <div>
-        Local
+      <div className="app-ctn">
+      <Navigation/>
+      <div className="video-ctn">
+      
         <video className="local" id="localVideo" ref="local" />
-        Remotes
         <video className="remotes" id="remoteVideos" ref="remotes" />
+      </div>
       </div>
     );
   }
